@@ -21,3 +21,7 @@ print x
 print y
 
 print sorted('Python')
+
+x = [18, 4, 25, 20, 8, 44, 60, 6, 22, 17, 21, 23, 9, 52]
+x.sort()
+print x
