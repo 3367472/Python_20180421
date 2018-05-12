@@ -7,3 +7,5 @@ for i in range(len(name)):
 print zip(name, age)
 for name, age in zip(name, age):
     print name, 'is', age, 'years old'
+
+print zip(range(5), range(10000000))
