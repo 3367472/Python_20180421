@@ -10,4 +10,4 @@ DingTalkLatitude = 39.958173556858
 LongitudeDiffValue = (DingTalkLongitude - BaiDuLongitude) * 111
 LatitudeDiffValue = (math.cos(math.radians(DingTalkLatitude)) - math.cos(math.radians(BaiDuLatitude))) * 111
 
-print '两点间距离约',round(pow((pow(LongitudeDiffValue, 2) + pow(LatitudeDiffValue, 2)), 0.5)*1000,2),'米'
+print('两点间距离约',round(pow((pow(LongitudeDiffValue, 2) + pow(LatitudeDiffValue, 2)), 0.5)*1000,2),'米')

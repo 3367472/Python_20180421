@@ -2,4 +2,4 @@
 import time
 
 t = str(int(time.time()))
-print t
+print(t)
