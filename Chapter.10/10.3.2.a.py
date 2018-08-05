@@ -1,4 +1,4 @@
 # encoding: utf-8
-import webbrowser
+import openwebpage
 
-webbrowser.open('http://www.python.org')
+openwebpage.open('http://www.python.org')
