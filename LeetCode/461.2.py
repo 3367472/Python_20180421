@@ -6,6 +6,9 @@ class Solution:
         :type y: int
         :rtype: int
         """
+        print(bin(x))
+        print(bin(y))
+        print(bin(x ^ y))
         return bin(x ^ y).count('1')
 
 

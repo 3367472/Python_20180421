@@ -5,42 +5,30 @@ class Solution:
         :type str: str
         :rtype: int
         """
-        str = str.strip()
-        s_sign = ''
-        if str[0] == '+':
-            str = str[1:]
-        elif str[0] == '-':
-            s_sign = str[0]
-            str = str[1:]
-        if str == '' or not str[0].isnumeric() :
-            return 0
-        else:
-            s_num = ''
-            for c in str:
-                if c == '+':
-                    continue
-                elif c == '-':
-                    s_sign = c
-                elif c.isnumeric():
-                    s_num = s_num + c
+        num = 0
+        str = str.lstrip()
+        s_sign = 1
+        num_max = 2 ** 31 - 1
+        num_min = -2 ** 31
+        if len(str) > 0:
+            index = 0
+            if str[index] == '+':
+                index += 1
+            elif str[index] == '-':
+                s_sign = -1
+                index += 1
+            while index < len(str):
+                if str[index].isnumeric():
+                    num = num * 10 + int(str[index])
+                    if s_sign == 1:
+                        if num > num_max:
+                            return num_max
+                    elif num > num_max + 1:
+                        return num_min
                 else:
                     break
-            if len(s_num) == 0:
-                return 0
-            else:
-                num = 0
-                for i in range(len(s_num)):
-                    num = num + int(s_num[-i - 1]) * 10 ** i
-                num_max = 2 ** 31 - 1
-                num_min = -2 ** 31
-                if s_sign == '-':
-                    if num > num_max + 1:
-                        return num_min
-                    else:
-                        num = num * -1
-                elif num > num_max:
-                    return num_max
-            return num
+                index += 1
+        return num * s_sign
 
 
 r = Solution()
@@ -53,3 +41,4 @@ print(r.myAtoi(''))
 print(r.myAtoi('    '))
 print(r.myAtoi('+'))
 print(r.myAtoi('+-2'))
+print(r.myAtoi('1'))
