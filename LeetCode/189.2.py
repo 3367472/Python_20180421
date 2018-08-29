@@ -6,8 +6,7 @@ class Solution:
         :type k: int
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        nums = nums[len(nums) - k % len(nums):] + nums[:len(nums) - k % len(nums)]
-        print(nums)
+        nums[:] = nums[len(nums) - k % len(nums):] + nums[:len(nums) - k % len(nums)]
 
 
 r = Solution()
