@@ -6,20 +6,22 @@
 #         self.next = None
 
 class Solution(object):
-    def removeElements(self, head, val):
+    def oddEvenList(self, head):
         """
         :type head: ListNode
-        :type val: int
         :rtype: ListNode
         """
-        while head and head.val == val:
-            head = head.next
-        p = head
-        while p and p.next:
-            if p.next.val == val:
-                p.next = p.next.next
-            else:
-                p = p.next
+        if head is not None and head.next is not None:
+            odd_tail = head
+            even_head = head.next
+            even_tail = head.next
+            while even_tail and even_tail.next:
+                odd_tail.next = even_tail.next
+                temp = even_tail.next.next
+                odd_tail = odd_tail.next
+                odd_tail.next = even_head
+                even_tail.next = temp
+                even_tail = even_tail.next
         return head
 
 
