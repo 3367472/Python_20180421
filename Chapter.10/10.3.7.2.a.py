@@ -5,7 +5,7 @@ import sys, shelve
 def store_person(db):
     """
 
-    Query user for data and stroe it in the shelf object
+    Query user for data and store it in the shelf object
     """
 
     pid = input('Enter unique ID number: ')
